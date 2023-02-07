@@ -1,5 +1,4 @@
 {
-  "extends": [
-    "@match/stylelint-config"
-  ]
+  "extends": ["@match/stylelint-config"],
+  "ignoreFiles": ["packages/match-cli/lib/**"]
 }

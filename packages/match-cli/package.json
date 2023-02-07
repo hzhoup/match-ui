@@ -1,0 +1,32 @@
+{
+  "name": "@match/cli",
+  "version": "0.0.1",
+  "description": "cli of match",
+  "type": "module",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "bin": {
+    "match-cli": "./lib/bin.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "author": "hzp",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "template",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "commander": "^10.0.0",
+    "execa": "^6.1.0",
+    "fs-extra": "^11.1.0",
+    "ora": "^6.1.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.11.19"
+  }
+}

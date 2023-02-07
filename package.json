@@ -2,12 +2,13 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "bootstrap": "pnpm install",
+    "lint": "match-cli lint"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false",
-    "postinstall": "simple-git-hooks",
-    "bootstrap": "pnpm install"
+    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false"
   },
   "lint-staged": {
     "*.{ts,tsx,js,less}": "prettier --write",
@@ -15,8 +16,9 @@
     "*.{css,less}": "stylelint --fix"
   },
   "devDependencies": {
-    "@match/eslint-config": "workspace:^0.0.1",
-    "@match/stylelint-config": "workspace:^0.0.1",
+    "@match/cli": "workspace:*",
+    "@match/eslint-config": "workspace:*",
+    "@match/stylelint-config": "workspace:*",
     "eslint": "^8.33.0",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",

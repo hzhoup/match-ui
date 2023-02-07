@@ -1,0 +1,6 @@
+packages/match-cli/lib/**
+
+**/package.json
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
