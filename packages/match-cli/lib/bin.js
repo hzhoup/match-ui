@@ -19,4 +19,17 @@ program
     const { changelog } = await import('./commands/changelog.js');
     return changelog(option);
 });
+program
+    .command('commit-lint <gitParams>')
+    .description('Lint commit message')
+    .action(async (option) => {
+    const { commitlint } = await import('./commands/commitlint.js');
+    return commitlint(option);
+});
+program.on('command:*', async ([cmd]) => {
+    const { default: logger } = await import('./common/logger.js');
+    program.outputHelp();
+    logger.error(`\nUnknown command ${cmd}.\n`);
+    process.exitCode = 1;
+});
 program.parse();

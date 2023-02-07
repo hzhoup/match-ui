@@ -9,7 +9,8 @@
     "changelog": "match-cli changelog"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged --allow-empty --concurrent false"
+    "pre-commit": "pnpm exec lint-staged --allow-empty --concurrent false",
+    "commit-msg": "pnpm exec match-cli commit-lint $1"
   },
   "lint-staged": {
     "*.{ts,tsx,js,less}": "prettier --write",
