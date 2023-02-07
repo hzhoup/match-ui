@@ -1,18 +1,24 @@
 {
-  "name": "match-ui",
+  "private": true,
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,less}": "prettier --write",
+    "*.{ts,tsx,js}": "eslint --fix",
+    "*.{css,less}": "stylelint --fix"
+  },
   "devDependencies": {
     "@match/eslint-config": "workspace:^0.0.1",
+    "@match/stylelint-config": "workspace:^0.0.1",
     "eslint": "^8.33.0",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
+    "simple-git-hooks": "^2.8.1",
     "stylelint": "^14.16.1",
     "typescript": "^4.9.5"
   }
