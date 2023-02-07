@@ -5,7 +5,9 @@
     "preinstall": "npx only-allow pnpm"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false"
+    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false",
+    "postinstall": "simple-git-hooks",
+    "bootstrap": "pnpm install"
   },
   "lint-staged": {
     "*.{ts,tsx,js,less}": "prettier --write",
