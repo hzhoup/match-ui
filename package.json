@@ -5,10 +5,11 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "simple-git-hooks",
     "bootstrap": "pnpm install",
-    "lint": "match-cli lint"
+    "lint": "match-cli lint",
+    "changelog": "match-cli changelog"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged --alow-empty --concurrent false"
+    "pre-commit": "pnpm exec lint-staged --allow-empty --concurrent false"
   },
   "lint-staged": {
     "*.{ts,tsx,js,less}": "prettier --write",
